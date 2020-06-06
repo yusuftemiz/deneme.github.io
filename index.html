@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="tr">	
+<head>
+	<meta charset="utf-8">
+	<title>Sayfa Başlığı</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+	<header>
+		Deneyimleme..
+	</header>
+	<nav>
+		<ul>
+			<li>
+				<a href="#">Anasayfa</a>
+			</li>
+			<li>
+				<a href="#">Babasayfa</a>
+			</li>
+			<li>
+				<a href="#">Hakkımızda</a>
+			</li>
+			<li>
+				<a href="#">İletişim</a>
+			</li>
+		</ul>
+		<button type="button" class="aside-menu">Kategoriler</button>
+
+	</nav>
+	<div class="container">
+		<article>
+			<h2>İçerikler</h2>
+			<section>
+				<h6>İçerik |</h6>
+				<p>Metin içeriği</p> 
+				<button class="close">Bu alanı kapat..</button>
+			</section>
+			<section>
+				<h6>İçerik ||</h6>
+				<p>Metin içeriği</p> 
+				<button class="close">Bu alanı kapat..</button>
+			</section>
+			<section>
+				<h6>İçerik |||</h6>
+				<p>Metin içeriği</p> 
+				<button class="close">Bu alanı kapat..</button>
+			</section>
+		</article>
+		<aside>
+			<h2>Kategoriler</h2>
+				<section class="aside-menu">
+					<ul>
+						<li>
+							<a href="#">Konu-1</a>
+						</li>
+						<li>
+							<a href="#">Konu-2</a>
+						</li>
+						<li>
+							<a href="#">Konu-3</a>
+						</li>
+						<li>
+							<a href="#">Konu-4</a>
+						</li>
+					</ul>
+				</section> 
+		</aside>
+		<div class="aside-overlay">
+			
+		</div>
+	</div>
+	<footer>Copyright © 2020 Yusuf Temiz </footer>
+
+	<div class="loading">
+		<div class="icon">
+			
+		</div>
+	</div>
+	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script>
+		$(window).on('load', function() {
+			$('.loading').addClass('hidden');
+		})
+		$(document).on('click', 'button.aside-menu, .aside-overlay', function() {
+			var body = $('body');
+			if(body.hasClass('aside-active'))
+				body.removeClass('aside-active');
+			else
+				body.addClass('aside-active');
+		}).on('click', '.close', function() {
+			$(this).closest('section').slideUp(1000);
+
+		})
+	</script>
+</body>
+
+</html>
